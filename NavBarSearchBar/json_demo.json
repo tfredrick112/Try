@@ -1,0 +1,17 @@
+{
+	"titleElephant":"Elephant",
+    "textElephant":"Elephants are large mammals of the family Elephantidae and the order Proboscidea. Three species are currently recognised: the African bush elephant (Loxodonta africana), the African forest elephant (L. cyclotis), and the Asian elephant (Elephas maximus). All elephants have several distinctive features, the most notable of which, are a long trunk, two protruding tusks, and pillar-like legs.",
+    "imageElephant":"Elephant.jpg",
+    "titleLion":"Lion",
+    "textLion":"The lion is the king of the jungle. It belongs to the cat family. It is found in Africa and in India in grasslands and savannahs.",
+   	"imageLion":"Lion.jpg",
+   	"titleCat":"Cat",
+   	"textCat":"The domestic cat (Felis silvestris catus or Felis catus)[1][5] is a small, typically furry, carnivorous mammal. They are often called house cats[6] when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines. They are often valued by humans for companionship and for their ability to hunt vermin. There are more than seventy cat breeds recognized by various cat registries.",
+   	"imageCat":"Cat.jpg",
+   	"titleDog":"Dog",
+   	"textDog":"The dog is a domestic animal. It is commonly known as man's best friend. The dog is a very common pet animal all over the world.",
+   	"imageDog":"Dog.jpg",
+   	"titleTiger":"Tiger",
+   	"textTiger":"The tiger (Panthera tigris) is the largest cat species, most recognizable for its pattern of dark vertical stripes on reddish-orange fur with a lighter underside. The species is classified in the genus Panthera with the lion, leopard, jaguar, and snow leopard. It is the national animal of India.",
+   	"imageTiger":"Tiger.jpg"
+}

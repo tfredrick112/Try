@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<title></title>
+	<style>
+		.card{
+			width: 50%;
+			background-color: #FFFF00;
+			border : 10px solid #0000FF;
+			border-radius: 5%;
+		}
+		.input-group-text:hover{
+				opacity: 0.8;
+				border: 4px solid lightblue;
+		}
+		.bodyClass{
+			background-image: url("bg.jpg");
+			background-size: cover;
+			width:100%;
+			height: 100%;
+			-webkit-animation-name: backgroundimage;
+			-webkit-animation-duration: 8s;
+			-webkit-animation-iteration-count: infinite;
+		}
+		.welcomeText{
+			background-color: #42f448;
+			font-style: Comic Sans MS;
+			align-items: center;
+			padding:10px;
+		}
+		@-webkit-keyframes backgroundimage{
+			0%{
+				background-image: url("bg.jpg");
+			}
+			25%{
+				background-image: url("bg1.jpg");
+			}
+			50%{
+				background-image: url("bg2.jpg");
+			}
+			75%{
+				background-image: url("bg3.jpg");
+			}
+			100%{
+				background-image: url("bg4.jpg");
+			}
+		}
+		
+	</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body class = "bodyClass">
+	<h1 class = "welcomeText"><center>Welcome to Saarang 2019</center></h1>
+	<center>
+	<div class = "card" ng-app="">
+		<h1 style="margin-top: 5%;">Event Registration</h1>
+		<div class = "card-body" style = "align-content: left; align-items: left;text-align: left;align-self: left">
+			<div class="shadow-lg p-3 mb-5 bg-white rounded">
+			<form class = "formClass" name = "myForm">
+				<div style="padding:5px;">
+				<fieldset>
+					<legend><b>Personal information</b></legend>
+				<div class="input-group">
+
+  					<div class="input-group-prepend">
+    				<span class="input-group-text" id="">First and last name</span>
+ 				</div>
+ 					
+ 					<input type="text" ng-model = "firstName" name = "firstName"class="form-control" required>
+  					<input type="text" ng-model = "surname" name = "surname" class="form-control" required>
+  					<br><br>
+  					<p style="color: #FF0000;"><span ng-show="myForm.firstName.$touched && myForm.firstName.$invalid">You must enter a valid first name.</span></p>
+  					<p style="color: #FF0000;"><span ng-show="myForm.surname.$touched && myForm.surname.$invalid">You must enter a valid surname.</span></p>
+				</div>
+				<br><br>
+				<div class="custom-file">
+ 					<input type="file" name = "fileInput" ng-model = "fileInput" accept = "image/*" id="customFile" placeholder="" required>
+					<label for="customFile">Upload a profile picture</label>
+					
+				</div>
+				<br><br>
+				<p>Gender</p>
+  				<div class="form-check form-check-inline">
+  						<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  						<label class="form-check-label" for="exampleRadios1">
+   						 Male
+  						</label>
+				</div>
+				<div class="form-check form-check-inline">
+  						<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  						<label class="form-check-label" for="exampleRadios1">
+   						 Female
+  						</label>
+				</div>
+				<div class="form-check form-check-inline">
+  						<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  						<label class="form-check-label" for="exampleRadios1">
+   						Other
+  						</label>
+				</div>
+			</fieldset>
+				<br><br>
+			<fieldset>
+				<legend><b>Contact Info</b></legend>
+				<div class="form-group">
+    				<label for="emailID" >Email-ID<span style = "color: red;"><b>*</b></span></label>
+    				<div class="shadow p-3 mb-5 bg-white rounded">
+    				<input type="email" ng-model = "emailID" name = "emailID" class="form-control" id="emailID" placeholder="Enter your email-id" required>
+    				</div>
+    				<p style="color: #FF0000;"><span ng-show = "myForm.emailID.$invalid && myForm.emailID.$touched">Enter a valid email-id.</span></p>
+  				</div>
+  				<div class="form-group">
+    				<label for="password">Password<span style = "color: red;"><b>*</b></span></label>
+    				<div class="shadow p-3 mb-5 bg-white rounded">
+    				<input type="password" class="form-control" name = "password" ng-model = "password" id="password" placeholder="Enter your password" minlength = "8" maxlength="32" required>
+    				</div>
+    				<p style = "color:grey;">Note:Password must be at least 8 characters long and less than 32 characters.</p> 
+    				<p style="color: #FF0000;"><span ng-show="myForm.password.$touched && myForm.password.$invalid">You must enter a valid password.</span></p>
+  				</div>
+  				<div class="form-group">
+    				<label for="phone">Phone number<span style = "color: red;"><b>*</b></span></label>
+    				<div class="shadow p-3 mb-5 bg-white rounded">
+    				<input type="text" class="form-control" ng-model = "phone" id="phone" name = "phone" placeholder="Please enter your phone number" minlength = "10" maxlength="10" required>
+    				</div>
+    				<p style="color: #FF0000;"><span ng-show="myForm.phone.$touched && myForm.phone.$invalid">You must enter a valid phone number.</span></p>
+  				</div>
+  			
+  				
+				<div class="form-group">
+    				<label for="colege">College</label>
+    				<div class="shadow p-3 mb-5 bg-white rounded">
+    				<input type="text" class="form-control" id="college" placeholder="Enter the name of your college"></div>
+  				</div>	
+  				</fieldset>
+  				<fieldset>
+  					<legend><b>Event</b></legend>
+  				<br>
+				<p>Choose the event that you would like to participate in.</p>
+				<select class="custom-select">
+					<div class="shadow p-3 mb-5 bg-white rounded">
+				  <option selected>Click here to see a list of the events.</option>
+				  		<option value="1">Elocution</option>
+				  		<option value="2">Mono-acting</option>
+				  		<option value="3">Face-painting</option>
+				  		<option value="4">What's the good word?</option>
+				  		<option value="5">Spell-bee</option></div>
+				</select>
+				<br><br>
+				<div class="form-group">
+    				<div class="form-check">
+     				<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+     				<label class="form-check-label" for="invalidCheck">
+        			I agree to the terms and conditions.
+      				</label>
+      				<div class="invalid-feedback">
+        			You must agree before submitting.
+      				</div>
+    				</div>
+ 					</div>
+ 				</fieldset>
+ 					<center>
+  					<button class="btn btn-primary" type="submit">Submit</button>
+  					<button class ="btn btn-warning" type = "reset">Reset</button>
+  					</center>
+
+
+			</div>
+			</form>
+			</div>
+
+		</div>
+		
+	</div>
+	</center>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .card{
+      margin-top: 50px;
+    }
+  </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href=".\Elephantcss.css">
+</head>
+<body class = "bodyClass" ng-app = "myApp" ng-controller="myCtrl">
+<div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div class="topnav" ng-click = "show()">
+  <a href=".\index.html">Home</a>
+  <a href="#about">Information</a>
+  <a class="active" href="#contact">Contact</a>
+  <div class="search-container">
+    <form action="/action_page.php" name = "MyForm">
+      <input type="text" placeholder="Search.." name="search" ng-model ="text"  class = "searchInput">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      <br>
+      <div ng-show="showMe" class= "dropdowncontent">
+    <ul>
+      <li class = "liClass" ng-repeat="x in names | filter : text" ng-click = "clicked(x)"><a class = "linky" target = "_blank"><b>{{x}}</b></a></li>
+    </ul>
+    </div>
+      </form>
+  </div>
+</div>
+</div>
+<script>
+  var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope,$location){
+      $scope.names = [
+        "Elephant",
+        "Lion",
+        "Dog",
+        "Tiger",
+        "Cat"
+      ];
+      $scope.showMe = false;
+      $scope.show = function(){
+        $scope.showMe = !$scope.showMe;
+      };
+
+      $scope.clicked = function(x){
+        var txt = "";
+        txt = ".\\"+x+".html";
+        console.log(txt);
+        window.location=txt;
+      };
+    });
+</script>
+    <center>
+    <div class="card" style="width: 50%;">
+  <div class="card-body">
+    <h5 class="card-title">Contact Details</h5>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <p class="card-text">This website is maintained by wildlife enthusiast D Tony Fredrick. The purpose of this website is to express his love for animals and share his wildlife photography with everyone.</p>
+    <br>
+    <p class = "card-text">To contact him:
+      <ul>
+        <li>Mobile - 9481154975</li>
+        <li>Email id - tfredrick112@gmail.com</li>
+        <li>Alternate - ee17b154@smail.iitm.ac.in</li>
+      </ul>
+    </p>
+
+    <a href=".\index.html" class="card-link">Return to home page</a>
+  </div>
+</div>
+</center>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
